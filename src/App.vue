@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
-  </div>
+ <div id="app">
+    <div class="mybutton">
+          <zhu-button>默认按钮</zhu-button>
+          <zhu-button type="primary">主要按钮</zhu-button>
+          <zhu-button type="success">成功按钮</zhu-button>
+          <zhu-button type="danger">危险按钮</zhu-button>
+        </div>
+    
+        <div class="mybutton">
+          <zhu-button round>默认按钮</zhu-button>
+          <zhu-button type="primary" round>主要按钮</zhu-button>
+          <zhu-button type="success" round>成功按钮</zhu-button>
+          <zhu-button type="danger" round>危险按钮</zhu-button>
+        </div>
+          <div class="mybutton">
+          <zhu-button round icon="search">默认按钮</zhu-button>
+          <zhu-button type="primary" round icon="loading">主要按钮</zhu-button> 
+          <zhu-button type="danger" round icon="shanchu">删除按钮</zhu-button> 
+        </div>
+ </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Button from "./components/button.vue";
+import './components/iconfont'
 
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    HelloWorld
+    "zhu-button": Button
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  box-sizing: border-box;
+
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei";
 }
+
+.mybutton {
+  display: inline-flex;
+  margin: 20px;
+}
+
 </style>
