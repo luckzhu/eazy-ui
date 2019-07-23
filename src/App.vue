@@ -15,8 +15,8 @@
         </div>
           <div class="mybutton">
           <zhu-button round icon="search" >默认按钮</zhu-button>
-          <zhu-button type="primary" round icon="setting">主要按钮</zhu-button> 
-          <zhu-button type="danger" round icon="delete">删除按钮</zhu-button> 
+          <zhu-button type="primary" round icon="setting" loading>主要按钮</zhu-button> 
+          <zhu-button type="danger" round icon="delete" loading>删除按钮</zhu-button> 
         </div>
  </div>
 </template>

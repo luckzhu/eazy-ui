@@ -4,8 +4,8 @@
     :class="[`zhu-button-${type}`, {'is-round':round != undefined}]"
     @click="btnClick"
   >
-    <zhu-icon v-if="loading===true" name="loading" class="icon-loading"></zhu-icon>
-    <zhu-icon v-if="icon && !loading" :name="icon"></zhu-icon>
+    <zhu-icon v-if="icon && isLoading===true" name="loading" class="icon-loading"></zhu-icon>
+    <zhu-icon v-if="icon && !isLoading" :name="icon"></zhu-icon>
     <span class="button-content">
       <slot></slot>
     </span>
@@ -17,7 +17,7 @@ import Icon from "./icon.vue";
 export default {
   data() {
     return {
-      loading: false
+      isLoading: false
     };
   },
   components: {
@@ -28,11 +28,16 @@ export default {
       default: "default"
     },
     round: {},
-    icon: {}
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     btnClick() {
-      this.loading = !this.loading
+      if( !this.loading) return
+      this.isLoading = !this.isLoading;
     }
   }
 };
@@ -60,6 +65,18 @@ export default {
   align-items: center;
 }
 
+.zhu-button:hover {
+  border: 1px solid #aaa;
+}
+
+.zhu-button:active {
+  background: #eee;
+}
+
+.zhu-button:focus {
+  outline: none;
+}
+
 .zhu-button-primary {
   color: #fff;
   background: #409eff;
@@ -79,17 +96,16 @@ export default {
   padding: 12px 23px;
 }
 
-@keyframes loadingRotation{
+@keyframes loadingRotation {
   0% {
-    transform: rotate(0)
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 .icon-loading {
-  animation: loadingRotation 2s linear infinite 
+  animation: loadingRotation 2s linear infinite;
 }
-
 </style>
