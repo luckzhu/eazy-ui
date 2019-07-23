@@ -1,33 +1,40 @@
 <template>
-  <button class="zhu-button" :class="[`zhu-button-${type}`, {'is-round':round != undefined}]">
-    <zhu-icon v-if="icon" :name="icon"></zhu-icon>
-    <span>
+  <button
+    class="zhu-button"
+    :class="[`zhu-button-${type}`, {'is-round':round != undefined}]"
+    @click="btnClick"
+  >
+    <zhu-icon v-if="loading===true" name="loading" class="icon-loading"></zhu-icon>
+    <zhu-icon v-if="icon && !loading" :name="icon"></zhu-icon>
+    <span class="button-content">
       <slot></slot>
     </span>
   </button>
 </template>
 
 <script>
-import Icon from './icon.vue'
+import Icon from "./icon.vue";
 export default {
   data() {
     return {
- 
+      loading: false
     };
   },
-  components:{
-    'zhu-icon': Icon
+  components: {
+    "zhu-icon": Icon
   },
   props: {
     type: {
       default: "default"
     },
     round: {},
-    icon: {
-      
-    }
+    icon: {}
   },
-  computed: {}
+  methods: {
+    btnClick() {
+      this.loading = !this.loading
+    }
+  }
 };
 </script>
 
@@ -71,4 +78,18 @@ export default {
   border-radius: 20px;
   padding: 12px 23px;
 }
+
+@keyframes loadingRotation{
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.icon-loading {
+  animation: loadingRotation 2s linear infinite 
+}
+
 </style>
