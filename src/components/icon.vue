@@ -1,5 +1,5 @@
 <template>
-  <svg class="icon">
+  <svg class="zhu-icon">
     <use :xlink:href="`#icon-${name}`" />
   </svg>
 </template>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style>
-.icon {
+.zhu-icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;

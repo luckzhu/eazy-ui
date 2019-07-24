@@ -1,7 +1,7 @@
 <template>
   <button
     class="zhu-button"
-    :class="[`zhu-button-${type}`, {'is-round':round != undefined}]"
+    :class="[`zhu-button-${type}`, {'is-round':round != undefined} , {[iconPosition]:true}]"
     @click="btnClick"
   >
     <zhu-icon v-if="icon && isLoading===true" name="loading" class="icon-loading"></zhu-icon>
@@ -32,18 +32,25 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        return !(value !== "left" && value !== "right");
+      }
     }
   },
   methods: {
     btnClick() {
-      if( !this.loading) return
+      if (!this.loading) return;
       this.isLoading = !this.isLoading;
     }
   }
 };
 </script>
 
-<style >
+<style lang="scss">
 .zhu-button {
   /* --font-size: 14px;
   --color: #606266;
@@ -63,6 +70,28 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
+  &.left {
+    > .zhu-icon {
+      order: 1;
+      margin-left: 0;
+      margin-right: 0.4em;
+    }
+    > .button-content {
+      order: 2;
+    }
+  }
+
+  &.right {
+    > .zhu-icon {
+      order: 2;
+      margin-left: 0.4em;
+      margin-right: 0;
+    }
+    > .button-content {
+      order: 1;
+    }
+  }
 }
 
 .zhu-button:hover {
