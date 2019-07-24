@@ -23,8 +23,13 @@
       <zhu-button-group>
         <zhu-button icon="left">前进</zhu-button>
         <zhu-button icon="right" iconPosition="right">后退</zhu-button>
-
       </zhu-button-group>
+    </div>
+
+    <div class="mybutton">
+      <zhu-input value="张三"></zhu-input>
+      <zhu-input value="张三" disabled></zhu-input>
+      <zhu-input value="张三" error errorMessage="名字不能是一个字哦"></zhu-input>
     </div>
   </div>
 </template>
@@ -33,12 +38,14 @@
 import Button from "./components/button.vue";
 import "./components/iconfont";
 import ButtonGroup from "./components/button-group.vue";
+import Input from "./components/input.vue";
 
 export default {
   name: "app",
   components: {
     "zhu-button": Button,
-    "zhu-button-group": ButtonGroup
+    "zhu-button-group": ButtonGroup,
+    "zhu-input": Input
   }
 };
 </script>
