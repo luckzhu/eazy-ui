@@ -1,11 +1,18 @@
 <template>
   <div class="wrapper" :class="{error}">
-    <input type="text" :value="value" :disabled="disabled" />
+    <input
+      type="text"
+      :value="value"
+      :disabled="disabled"
+      @input="$emit('input',$event.target.value)"
+      @change="$emit('change',$event.target.value)"
+      @focus="$emit('focus',$event.target.value)"
+      @blur="$emit('blur',$event.target.value)"
+    />
     <template v-if="error">
-        <zhu-icon name="setting"></zhu-icon>
-        <span class="errorMessage">{{errorMessage}}</span>
+      <zhu-icon name="setting"></zhu-icon>
+      <span class="errorMessage">{{errorMessage}}</span>
     </template>
-
   </div>
 </template>
 
@@ -28,7 +35,7 @@ export default {
       default: false
     },
     errorMessage: {
-        type: String
+      type: String
     }
   }
 };

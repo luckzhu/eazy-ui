@@ -27,9 +27,11 @@
     </div>
 
     <div class="mybutton">
+      <zhu-input value="双向绑定" @input="inputChange"></zhu-input>
       <zhu-input value="张三"></zhu-input>
       <zhu-input value="张三" disabled></zhu-input>
-      <zhu-input value="张三" error errorMessage="名字不能是一个字哦"></zhu-input>
+      <zhu-input value="张" error errorMessage="名字不能是一个字哦"></zhu-input>
+      
     </div>
   </div>
 </template>
@@ -46,6 +48,11 @@ export default {
     "zhu-button": Button,
     "zhu-button-group": ButtonGroup,
     "zhu-input": Input
+  },
+  methods: {
+    inputChange(e){
+      console.log(e)
+    }
   }
 };
 </script>
