@@ -31,7 +31,10 @@
       <zhu-input value="张三"></zhu-input>
       <zhu-input value="张三" disabled></zhu-input>
       <zhu-input value="张" error errorMessage="名字不能是一个字哦"></zhu-input>
-      
+    </div>
+
+    <div class="mybutton">
+      <button @click="showToast">点我触发Toast</button>
     </div>
   </div>
 </template>
@@ -42,6 +45,8 @@ import "./components/iconfont";
 import ButtonGroup from "./components/button-group.vue";
 import Input from "./components/input.vue";
 
+
+
 export default {
   name: "app",
   components: {
@@ -50,8 +55,11 @@ export default {
     "zhu-input": Input
   },
   methods: {
-    inputChange(e){
-      console.log(e)
+    inputChange(e) {
+      console.log(e);
+    },
+    showToast(){
+      this.$toast("点击成功！")
     }
   }
 };
