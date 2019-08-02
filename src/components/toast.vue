@@ -1,7 +1,9 @@
 <template>
   <div class="toast" ref="toast">
-    <slot v-if="!enableHtml"></slot>
-    <div v-else v-html="$slots.default[0]"></div>
+    <div class="message">
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default[0]"></div>
+    </div>
     <span class="line" ref="line"></span>
     <span class="close" v-if="closeButton" @click="clickClose">{{closeButton.text}}</span>
   </div>
@@ -35,20 +37,26 @@ export default {
     }
   },
   mounted() {
-    if (this.autoClose) {
-      setTimeout(() => {
-        this.toastClose();
-      }, this.closeTime * 1000);
-    }
-
-    //异步问题可能会获取不到css，所以用nextTick()
-    this.$nextTick(()=>{
-      //getBoundingClientRect()返回元素的大小及其相对于视口的位置
-      this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
-    })
-
+    this.updateStyle();
+    this.exeAutoClose();
   },
   methods: {
+    updateStyle() {
+      //异步问题可能会获取不到css，所以用nextTick()
+      this.$nextTick(() => {
+        //getBoundingClientRect()返回元素的大小及其相对于视口的位置
+        this.$refs.line.style.height = `${
+          this.$refs.toast.getBoundingClientRect().height
+        }px`;
+      });
+    },
+    exeAutoClose() {
+      if (this.autoClose) {
+        setTimeout(() => {
+          this.toastClose();
+        }, this.closeTime * 1000);
+      }
+    },
     toastClose() {
       //destroy并不会将元素从页面移除，所以要remove
       this.$el.remove();
@@ -87,7 +95,10 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   justify-content: center;
   background: $toast-bg;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-  padding: 8px 16px;
+  padding: 0 16px;
+}
+.message {
+  padding: 8px 0;
 }
 
 .line {

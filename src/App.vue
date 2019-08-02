@@ -57,7 +57,7 @@ export default {
       console.log(e);
     },
     showToast() {
-      this.$toast("<i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i>", {
+      this.$toast("点击成功", {
         closeButton: {
           text: "关闭",
           closeCallback(toast) {
