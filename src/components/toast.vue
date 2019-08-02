@@ -74,6 +74,7 @@ export default {
     toastClose() {
       //destroy并不会将元素从页面移除，所以要remove
       this.$el.remove();
+      this.$emit('close')
       this.$destroy();
     },
     clickClose() {
