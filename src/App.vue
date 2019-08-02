@@ -62,8 +62,8 @@ export default {
       this.$toast("点击成功",{
         closeButton: {
           text: '完美',
-          closeCallback(){
-            console.log('回调收到啦！')
+          closeCallback(toast){
+            console.log(toast)
           }
         }
       })

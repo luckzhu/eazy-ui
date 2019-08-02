@@ -44,7 +44,8 @@ export default {
     },
     clickClose(){
       this.toastClose()
-      this.closeButton.closeCallback()
+      //callback的时候可以将this（当前的toast实例）传过去，这样就可以调用toast的内部方法
+      this.closeButton.closeCallback(this)
     }
   }
 };
