@@ -64,7 +64,8 @@ export default {
             console.log(toast);
           }
         },
-        enableHtml: false
+        enableHtml: false,
+        position: 'top'
       });
     }
   }
