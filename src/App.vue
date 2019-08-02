@@ -59,7 +59,14 @@ export default {
       console.log(e);
     },
     showToast(){
-      this.$toast("点击成功！")
+      this.$toast("点击成功",{
+        closeButton: {
+          text: '完美',
+          closeCallback(){
+            console.log('回调收到啦！')
+          }
+        }
+      })
     }
   }
 };
