@@ -45,8 +45,6 @@ import "./components/iconfont";
 import ButtonGroup from "./components/button-group.vue";
 import Input from "./components/input.vue";
 
-
-
 export default {
   name: "app",
   components: {
@@ -58,15 +56,16 @@ export default {
     inputChange(e) {
       console.log(e);
     },
-    showToast(){
-      this.$toast("点击成功",{
+    showToast() {
+      this.$toast("<i>点击成功</i>", {
         closeButton: {
-          text: '完美',
-          closeCallback(toast){
-            console.log(toast)
+          text: "完美",
+          closeCallback(toast) {
+            console.log(toast);
           }
-        }
-      })
+        },
+        enableHtml: true
+      });
     }
   }
 };
