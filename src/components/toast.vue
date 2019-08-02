@@ -16,23 +16,23 @@ export default {
     },
     closeTime: {
       type: Number,
-      default: 5,
+      default: 5
     },
     closeButton: {
       type: Object,
       //由于是个对象，必须写成函数形式return
-      default(){
-        return{
-          text: '关闭',
+      default() {
+        return {
+          text: "关闭",
           closeCallback: undefined
-        }
+        };
       }
     }
   },
   mounted() {
     if (this.autoClose) {
       setTimeout(() => {
-       this.toastClose()
+        this.toastClose();
       }, this.closeTime * 1000);
     }
   },
@@ -42,10 +42,15 @@ export default {
       this.$el.remove();
       this.$destroy();
     },
-    clickClose(){
-      this.toastClose()
+    clickClose() {
+      this.toastClose();
       //callback的时候可以将this（当前的toast实例）传过去，这样就可以调用toast的内部方法
-      this.closeButton.closeCallback(this)
+      if (
+        this.closeButton &&
+        typeof this.closeButton.closeCallback === "function"
+      ) {
+        this.closeButton.closeCallback(this);
+      }
     }
   }
 };
