@@ -57,14 +57,14 @@ export default {
       console.log(e);
     },
     showToast() {
-      this.$toast("<i>点击成功</i>", {
+      this.$toast("<i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i><i>点击成功</i>", {
         closeButton: {
-          text: "完美",
+          text: "关闭",
           closeCallback(toast) {
             console.log(toast);
           }
         },
-        enableHtml: true
+        enableHtml: false
       });
     }
   }

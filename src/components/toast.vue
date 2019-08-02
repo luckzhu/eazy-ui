@@ -1,8 +1,8 @@
 <template>
-  <div class="toast">
+  <div class="toast" ref="toast">
     <slot v-if="!enableHtml"></slot>
     <div v-else v-html="$slots.default[0]"></div>
-    <span class="line"></span>
+    <span class="line" ref="line"></span>
     <span class="close" v-if="closeButton" @click="clickClose">{{closeButton.text}}</span>
   </div>
 </template>
@@ -40,6 +40,13 @@ export default {
         this.toastClose();
       }, this.closeTime * 1000);
     }
+
+    //异步问题可能会获取不到css，所以用nextTick()
+    this.$nextTick(()=>{
+      //getBoundingClientRect()返回元素的大小及其相对于视口的位置
+      this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+    })
+
   },
   methods: {
     toastClose() {
@@ -63,11 +70,11 @@ export default {
 
 <style lang="scss" scoped>
 $font-size: 14px;
-$toast-height: 40px;
+$toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
 .toast {
   font-size: $font-size;
-  height: $toast-height;
+  min-height: $toast-min-height;
   line-height: 1.8;
   position: fixed;
   top: 0;
@@ -80,7 +87,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   justify-content: center;
   background: $toast-bg;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-  padding: 0 16px;
+  padding: 8px 16px;
 }
 
 .line {
@@ -93,5 +100,6 @@ $toast-bg: rgba(0, 0, 0, 0.75);
 .close {
   padding-left: 16px;
   cursor: pointer;
+  flex-shrink: 0; //不会换行
 }
 </style>
