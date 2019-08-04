@@ -21,7 +21,6 @@ export default {
   inject: ["eventBus"],
   created() {
     this.eventBus.$on("update:selected", name => {
-      console.log(name);
       if (name === this.name) {
         this.active = true;
       } else {
