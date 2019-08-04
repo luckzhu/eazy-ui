@@ -1,10 +1,6 @@
 <template>
-  <div class="popover" @click="showContent">
-    <div
-      ref="contentWrapper"
-      class="contentWrapper"
-      v-if="isPopShow"
-    >
+  <div ref="popover" class="popover" @click="onClickPop">
+    <div ref="contentWrapper" class="contentWrapper" v-if="isPopShow">
       <slot name="content"></slot>
     </div>
     <div class="triggerContent" ref="triggerContent">
@@ -21,29 +17,42 @@ export default {
     };
   },
   methods: {
-    showContent(event) {
-      //只有点中按钮中的元素时才触发showContent
-      if (this.$refs.triggerContent.contains(event.target)) {
-        this.isPopShow = !this.isPopShow;
-      }
+    positionPop() {
+      let { contentWrapper } = this.$refs;
+      document.body.appendChild(contentWrapper);
+      let { left, top } = this.$refs.triggerContent.getBoundingClientRect();
+      //注意是 window.scrollX
+      contentWrapper.style.left = left + window.scrollX + "px";
+      contentWrapper.style.top = top + window.scrollY + "px";
+    },
 
-      if (this.isPopShow === true) {
-        setTimeout(() => {
-          let { contentWrapper } = this.$refs;
-          document.body.appendChild(contentWrapper);
-          let { left, top } = this.$refs.triggerContent.getBoundingClientRect();
-          //注意是 window.scrollX
-          contentWrapper.style.left = left + window.scrollX + "px";
-          contentWrapper.style.top = top + window.scrollY + "px";
-          let x = e => {
-            if (contentWrapper.contains(e.target)) {
-            } else {
-              this.isPopShow = false;
-              document.removeEventListener("click", x);
-            }
-          };
-          document.addEventListener("click", x);
-        }, 0);
+    onClickDocument(event) {
+      if (this.$refs.contentWrapper.contains(event.target)) {
+      } else {
+        this.popClose();
+      }
+    },
+
+    popShow() {
+      this.isPopShow = true;
+      setTimeout(() => {
+        this.positionPop();
+        document.addEventListener("click", this.onClickDocument);
+      }, 0);
+    },
+    popClose() {
+      this.isPopShow = false;
+      document.removeEventListener("click", this.onClickDocument);
+    },
+
+    onClickPop(event) {
+      //只有点中按钮中的元素时才触发onClickPop
+      if (this.$refs.triggerContent.contains(event.target)) {
+        if (this.isPopShow === true) {
+          this.popClose();
+        } else {
+          this.popShow();
+        }
       }
     }
   }
