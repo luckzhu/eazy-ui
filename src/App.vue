@@ -131,8 +131,13 @@ export default {
 </script>
 
 <style>
+ * {
+    padding: 0;
+    margin: 0;
+  };
 :root {
   box-sizing: border-box;
+ 
 
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei";
@@ -147,6 +152,6 @@ export default {
   padding: 24px;
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  margin: 10px 0;
+  margin: 10px 10px;
 }
 </style>

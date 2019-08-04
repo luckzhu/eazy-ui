@@ -1,9 +1,16 @@
 <template>
   <div class="popover" @click.stop="showContent">
-    <div class="contentWrapper" v-if="isPopShow" @click.stop>
+    <div
+      ref="contentWrapper"
+      class="contentWrapper"
+      v-if="isPopShow"
+      @click.stop
+    >
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <div class="triggerContent" ref="triggerContent">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -19,6 +26,12 @@ export default {
       this.isPopShow = !this.isPopShow;
       if (this.isPopShow === true) {
         this.$nextTick(() => {
+          let { contentWrapper } = this.$refs;
+          document.body.appendChild(contentWrapper);
+          let { left, top } = this.$refs.triggerContent.getBoundingClientRect();
+          //注意是 window.scrollX
+          contentWrapper.style.left = left + window.scrollX + "px";
+          contentWrapper.style.top = top + window.scrollY + "px";
           let x = () => {
             this.isPopShow = false;
             document.removeEventListener("click", x);
@@ -34,18 +47,12 @@ export default {
 
 <style lang="scss" scoped>
 .popover {
-  display: flex;
-  flex-direction: column;
   position: relative;
-  > * {
-    align-self: baseline;
-  }
-  > .contentWrapper {
-    padding: 14px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.65);
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-  }
+}
+.contentWrapper {
+  position: absolute;
+  padding: 14px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.65);
+  transform: translateY(-100%)
 }
 </style>
