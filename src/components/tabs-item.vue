@@ -31,7 +31,7 @@ export default {
   computed: {
     tabActiveClass() {
       return {
-        'tabActive': this.active
+        tabActive: this.active
       };
     }
   },
@@ -45,11 +45,19 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-item {
-  padding: 0 1em;
-  border: 1px solid green;
+  padding: 0 20px;
+  height: 40px;
+  box-sizing: border-box;
+  line-height: 40px;
+  font-weight: 500;
+  color: #303133;
+  position: relative;
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
 .tabActive {
-    background-color: aqua;
+  color: #409eff;
 }
 </style>

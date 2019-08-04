@@ -13,5 +13,6 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-body {
+    
 }
 </style>

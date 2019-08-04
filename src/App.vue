@@ -54,18 +54,18 @@
     </div>
 
     <div class="testBox">
-        <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
-      <ez-tabs :selected.sync="slectedTabs" >
+      <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
+      <ez-tabs :selected.sync="slectedTabs">
         <ez-tabs-head>
-          <ez-tabs-item name="beauty">美女</ez-tabs-item>
-          <ez-tabs-item name="finance">财经</ez-tabs-item>
-          <ez-tabs-item name="sports">体育</ez-tabs-item>
-          <button slot="action">额外按钮</button>
+          <ez-tabs-item name="beauty">美女新闻</ez-tabs-item>
+          <ez-tabs-item name="finance">财经新闻</ez-tabs-item>
+          <ez-tabs-item name="sports">体育新闻</ez-tabs-item>
+          <ez-button slot="action">额外按钮</ez-button>
         </ez-tabs-head>
         <ez-tabs-body>
-          <ez-tabs-pane name="beauty">美女的新闻啦啦啦</ez-tabs-pane>
-          <ez-tabs-pane name="finance">财经的新闻啦啦啦</ez-tabs-pane>
-          <ez-tabs-pane name="sports">体育的新闻啦啦啦</ez-tabs-pane>
+          <ez-tabs-pane name="beauty">关于美女的新闻</ez-tabs-pane>
+          <ez-tabs-pane name="finance">关于财经的新闻</ez-tabs-pane>
+          <ez-tabs-pane name="sports">关于体育的新闻</ez-tabs-pane>
         </ez-tabs-body>
       </ez-tabs>
     </div>
@@ -135,5 +135,9 @@ export default {
 }
 .testBox {
   display: block;
+  padding: 24px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  margin: 10px 0;
 }
 </style>

@@ -43,6 +43,6 @@ export default {
 }
 
 .tabActive {
-  background-color: aqua;
+  
 }
 </style>
