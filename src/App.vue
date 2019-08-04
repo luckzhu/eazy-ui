@@ -69,6 +69,13 @@
         </ez-tabs-body>
       </ez-tabs>
     </div>
+
+    <div class="testBox">
+      <ez-popover>
+        <div slot="content">我是插槽的内容</div>
+        <ez-button>点我</ez-button>
+      </ez-popover>
+    </div>
   </div>
 </template>
 
@@ -83,6 +90,7 @@ import TabsBody from "./components/tabs-body";
 import TabsItem from "./components/tabs-item";
 import TabsPane from "./components/tabs-pane";
 import tabsHeadVue from "./components/tabs-head.vue";
+import Popover from "./components/popover"
 
 export default {
   name: "app",
@@ -99,7 +107,8 @@ export default {
     "ez-tabs-head": TabsHead,
     "ez-tabs-body": TabsBody,
     "ez-tabs-item": TabsItem,
-    "ez-tabs-pane": TabsPane
+    "ez-tabs-pane": TabsPane,
+    "ez-popover": Popover,
   },
   methods: {
     inputChange(e) {
