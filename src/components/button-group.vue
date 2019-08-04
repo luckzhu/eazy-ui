@@ -1,5 +1,5 @@
 <template>
-  <div class="zhu-button-group">
+  <div class="ez-button-group">
     <slot></slot>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
       let name = node.nodeName.toLowerCase();
       if (name !== "button") {
         console.warn(
-          `zhu-button-group的子元素应该全是 zhu-button,但你写的是${name}`
+          `ez-button-group的子元素应该全是 ez-button,但你写的是${name}`
         );
       }
     }
@@ -20,10 +20,10 @@ export default {
 </script>
 
 <style lang="scss">
-.zhu-button-group {
+.ez-button-group {
   display: inline-flex;
   vertical-align: middle;
-  & > .zhu-button {
+  & > .ez-button {
     border-radius: 0;
     &:first-child {
       border-top-left-radius: 4px;

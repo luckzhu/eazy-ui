@@ -1,7 +1,7 @@
 <template>
   <button
-    class="zhu-button"
-    :class="[`zhu-button-${type}`, {'is-round':round != undefined} , {[iconPosition]:true}]"
+    class="ez-button"
+    :class="[`ez-button-${type}`, {'is-round':round != undefined} , {[iconPosition]:true}]"
     @click="btnClick"
   >
     <zhu-icon v-if="icon && isLoading===true" name="loading" class="icon-loading"></zhu-icon>
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-.zhu-button {
+.ez-button {
   /* --font-size: 14px;
   --color: #606266;
   --button-height: 32px;
@@ -94,29 +94,29 @@ export default {
   }
 }
 
-.zhu-button:hover {
+.ez-button:hover {
   border: 1px solid #aaa;
 }
 
-.zhu-button:active {
+.ez-button:active {
   background: #eee;
 }
 
-.zhu-button:focus {
+.ez-button:focus {
   outline: none;
 }
 
-.zhu-button-primary {
+.ez-button-primary {
   color: #fff;
   background: #409eff;
 }
 
-.zhu-button-success {
+.ez-button-success {
   color: #fff;
   background: #67c23a;
 }
 
-.zhu-button-danger {
+.ez-button-danger {
   color: #fff;
   background: #f56c6c;
 }
