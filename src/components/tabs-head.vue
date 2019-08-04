@@ -9,7 +9,9 @@
 
 <script>
 export default {
-    name: "EazyTabsHead"
+    name: "EazyTabsHead",
+    inject: ['eventBus'],
+   
 };
 </script>
 
