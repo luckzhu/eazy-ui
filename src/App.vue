@@ -75,41 +75,66 @@
         <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
       </ez-popover>
-       <ez-popover position="bottom" trigger="click">
+      <ez-popover position="bottom" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我下</ez-button>
       </ez-popover>
 
-        <ez-popover position="left" trigger="click">
+      <ez-popover position="left" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我左</ez-button>
       </ez-popover>
 
-        <ez-popover position="right" trigger="click">
+      <ez-popover position="right" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>
     </div>
 
-     <div class="testBox">
+    <div class="testBox">
       <ez-popover position="top" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
       </ez-popover>
-       <ez-popover position="bottom" trigger="hover">
+      <ez-popover position="bottom" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我下</ez-button>
       </ez-popover>
 
-        <ez-popover position="left" trigger="hover">
+      <ez-popover position="left" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我左</ez-button>
       </ez-popover>
 
-        <ez-popover position="right" trigger="hover">
+      <ez-popover position="right" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>
+    </div>
+
+    <div class="testBox">
+      <ez-collapse :selected="['item1', 'item2']" >
+      
+        <ez-collapse-item
+          title="一致性 Consistency
+"
+          name="item1"
+          >与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；
+          在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</ez-collapse-item
+        >
+        <ez-collapse-item title="反馈 Feedback" name="item2"
+          >控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；
+          页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</ez-collapse-item
+        >
+        <ez-collapse-item
+          title="效率 Efficiency
+"
+          name="item3"
+          >简化流程：设计简洁直观的操作流程；
+          清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；
+          帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</ez-collapse-item
+        >
+      </ez-collapse>
     </div>
   </div>
 </template>
@@ -125,7 +150,9 @@ import TabsBody from "./components/tabs-body";
 import TabsItem from "./components/tabs-item";
 import TabsPane from "./components/tabs-pane";
 import tabsHeadVue from "./components/tabs-head.vue";
-import Popover from "./components/popover"
+import Popover from "./components/popover";
+import Collapse from "./components/collapse";
+import CollapseItem from "./components/collapse-item";
 
 export default {
   name: "app",
@@ -144,6 +171,8 @@ export default {
     "ez-tabs-item": TabsItem,
     "ez-tabs-pane": TabsPane,
     "ez-popover": Popover,
+    "ez-collapse": Collapse,
+    "ez-collapse-item": CollapseItem
   },
   methods: {
     inputChange(e) {
@@ -166,13 +195,12 @@ export default {
 </script>
 
 <style>
- * {
-    padding: 0;
-    margin: 0;
-  };
+* {
+  padding: 0;
+  margin: 0;
+}
 :root {
   box-sizing: border-box;
- 
 
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei";
