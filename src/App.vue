@@ -71,21 +71,42 @@
     </div>
 
     <div class="testBox">
-      <ez-popover position="top">
+      <ez-popover position="top" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
       </ez-popover>
-       <ez-popover position="bottom">
+       <ez-popover position="bottom" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我下</ez-button>
       </ez-popover>
 
-        <ez-popover position="left">
+        <ez-popover position="left" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我左</ez-button>
       </ez-popover>
 
-        <ez-popover position="right">
+        <ez-popover position="right" trigger="click">
+        <div slot="content">我是popover内容</div>
+        <ez-button>点我右</ez-button>
+      </ez-popover>
+    </div>
+
+     <div class="testBox">
+      <ez-popover position="top" trigger="hover">
+        <div slot="content">我是popover内容</div>
+        <ez-button>点我上</ez-button>
+      </ez-popover>
+       <ez-popover position="bottom" trigger="hover">
+        <div slot="content">我是popover内容</div>
+        <ez-button>点我下</ez-button>
+      </ez-popover>
+
+        <ez-popover position="left" trigger="hover">
+        <div slot="content">我是popover内容</div>
+        <ez-button>点我左</ez-button>
+      </ez-popover>
+
+        <ez-popover position="right" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>

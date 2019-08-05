@@ -1,5 +1,5 @@
 <template>
-  <div ref="popover" class="popover" @click="onClickPop">
+  <div ref="popover" class="popover">
     <div
       ref="contentWrapper"
       class="contentWrapper"
@@ -21,12 +21,35 @@ export default {
       isPopShow: false
     };
   },
+  mounted() {
+    if(this.trigger === 'click'){
+      this.$refs.popover.addEventListener('click',this.onClickPop)
+    }else if (this.trigger === 'hover'){
+      this.$refs.popover.addEventListener('mouseenter',this.popShow)
+      this.$refs.popover.addEventListener('mouseleave',this.popClose)
+    }
+  },
+  destroyed(){
+  if(this.trigger === 'click'){
+      this.$refs.popover.removeEventListener('click',this.onClickPop)
+    }else if (this.trigger === 'hover'){
+      this.$refs.popover.removeEventListener('mouseenter',this.popShow)
+      this.$refs.popover.removeEventListener('mouselever',this.popClose)
+    }
+  },
   props: {
     position: {
       type: String,
       default: "top",
       validator(value) {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
+      }
+    },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
       }
     }
   },
