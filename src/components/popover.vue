@@ -34,25 +34,34 @@ export default {
     positionPop() {
       const { contentWrapper, triggerContent } = this.$refs;
       document.body.appendChild(contentWrapper);
-      let { left, top, height, width } = triggerContent.getBoundingClientRect();
-      //注意是 window.scrollX
-      if (this.position === "top") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top + window.scrollY + "px";
-      } else if (this.position === "bottom") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top + height + window.scrollY + "px";
-      } else if (this.position === "left") {
-        let { height: ContentHeight } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top =
-          top - (ContentHeight - height) / 2 + window.scrollY + "px";
-      } else if (this.position === "right") {
-        let { height: ContentHeight } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.left = left + width + window.scrollX + "px";
-        contentWrapper.style.top =
-          top - (ContentHeight - height) / 2 + window.scrollY + "px";
-      }
+      const {
+        left,
+        top,
+        height,
+        width
+      } = triggerContent.getBoundingClientRect();
+      const { height: ContentHeight } = contentWrapper.getBoundingClientRect();
+      //注意加上 window.scrollX
+      let x = {
+        top: {
+          top: top + window.scrollY,
+          left: left + window.scrollX
+        },
+        bottom: {
+          top: top + height + window.scrollY,
+          left: left + window.scrollX
+        },
+        left: {
+          top: top - (ContentHeight - height) / 2 + window.scrollY,
+          left: left + window.scrollX
+        },
+        right: {
+          top: top - (ContentHeight - height) / 2 + window.scrollY,
+          left: left + width + window.scrollX
+        }
+      };
+      contentWrapper.style.top = x[this.position].top + "px";
+      contentWrapper.style.left = x[this.position].left + "px";
     },
 
     onClickDocument(event) {

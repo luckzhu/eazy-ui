@@ -72,21 +72,21 @@
 
     <div class="testBox">
       <ez-popover position="top">
-        <div slot="content">我是插槽的内容aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssss</div>
+        <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
       </ez-popover>
        <ez-popover position="bottom">
-        <div slot="content">我是插槽的内容aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssss</div>
+        <div slot="content">我是popover内容</div>
         <ez-button>点我下</ez-button>
       </ez-popover>
 
         <ez-popover position="left">
-        <div slot="content">我是插槽的内容aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssss</div>
+        <div slot="content">我是popover内容</div>
         <ez-button>点我左</ez-button>
       </ez-popover>
 
         <ez-popover position="right">
-        <div slot="content">我是插槽的内容aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssss</div>
+        <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>
     </div>
