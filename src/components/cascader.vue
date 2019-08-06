@@ -33,4 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.trigger {
+  margin-bottom: 10px;
+}
 </style>
