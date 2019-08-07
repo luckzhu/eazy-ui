@@ -7,7 +7,16 @@
         :key="item.value"
         @click="onClickLabel(item)"
       >
-        {{ item.label }}
+       <span class="label"> {{ item.label }}</span>
+        <span class="icons">
+          <!-- <template v-if="item.label === loadingItem.label">
+            <icon class="loading" name="loading"></icon>
+          </template>
+          <template v-else>
+            <icon class="next" v-if="rightArrowVisible(item)" name="right"></icon>
+          </template> -->
+        </span>
+       
       </div>
     </div>
     <div class="right" v-if="rightItems">
