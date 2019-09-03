@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Icon from "./icon.vue";
+import Icon from "@/components/Icon/icon.vue";
 export default {
   data() {
     return {

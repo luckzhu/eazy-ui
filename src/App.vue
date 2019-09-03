@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div class="testBox">
+    <!-- <div class="testBox">
       <ez-cascader :source="sourceItem"> 
         <ez-button>点我</ez-button>
       </ez-cascader>
-    </div>
+    </div> -->
 
     <div class="testBox">
       <div class="mybutton">
@@ -40,7 +40,7 @@
         >
       </div>
 
-      <div class="mybutton">
+      <!-- <div class="mybutton">
         <ez-button-group>
           <ez-button icon="left">前进</ez-button>
           <ez-button icon="right" iconPosition="right">后退</ez-button>
@@ -56,11 +56,11 @@
 
       <div class="mybutton">
         <button @click="showToast">点我触发Toast</button>
-      </div>
+      </div> -->
     </div>
 
-    <div class="testBox">
-      <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
+ <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
+    <!-- <div class="testBox">
       <ez-tabs :selected.sync="slectedTabs">
         <ez-tabs-head>
           <ez-tabs-item name="beauty">美女新闻</ez-tabs-item>
@@ -74,9 +74,9 @@
           <ez-tabs-pane name="sports">关于体育的新闻</ez-tabs-pane>
         </ez-tabs-body>
       </ez-tabs>
-    </div>
+    </div> -->
 
-    <div class="testBox">
+    <!-- <div class="testBox">
       <ez-popover position="top" trigger="click">
         <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
@@ -95,9 +95,9 @@
         <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>
-    </div>
+    </div> -->
 
-    <div class="testBox">
+    <!-- <div class="testBox">
       <ez-popover position="top" trigger="hover">
         <div slot="content">我是popover内容</div>
         <ez-button>点我上</ez-button>
@@ -116,9 +116,9 @@
         <div slot="content">我是popover内容</div>
         <ez-button>点我右</ez-button>
       </ez-popover>
-    </div>
+    </div> -->
 
-    <div class="testBox">
+    <!-- <div class="testBox">
       <ez-collapse :selected="['item1', 'item2']">
         <ez-collapse-item
           title="一致性 Consistency
@@ -140,26 +140,26 @@
           帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</ez-collapse-item
         >
       </ez-collapse>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import Button from "./components/button.vue";
-import "./components/iconfont";
-import ButtonGroup from "./components/button-group.vue";
-import Input from "./components/input.vue";
-import Tabs from "./components/tabs";
-import TabsHead from "./components/tabs-head";
-import TabsBody from "./components/tabs-body";
-import TabsItem from "./components/tabs-item";
-import TabsPane from "./components/tabs-pane";
-import tabsHeadVue from "./components/tabs-head.vue";
-import Popover from "./components/popover";
-import Collapse from "./components/collapse";
-import CollapseItem from "./components/collapse-item";
-import Cascader from "./components/cascader";
-import CascaderItems from "./components/cascader-items";
+import Button from "@/components/Button/button.vue";
+import "@/components/Icon/iconfont";
+// import ButtonGroup from "./components/button-group.vue";
+// import Input from "./components/input.vue";
+// import Tabs from "./components/tabs";
+// import TabsHead from "./components/tabs-head";
+// import TabsBody from "./components/tabs-body";
+// import TabsItem from "./components/tabs-item";
+// import TabsPane from "./components/tabs-pane";
+// import tabsHeadVue from "./components/tabs-head.vue";
+// import Popover from "./components/popover";
+// import Collapse from "./components/collapse";
+// import CollapseItem from "./components/collapse-item";
+// import Cascader from "./components/cascader";
+// import CascaderItems from "./components/cascader-items";
 
 let options = [
   {
@@ -434,41 +434,41 @@ export default {
   name: "app",
   data() {
     return {
-      slectedTabs: "finance",
-      sourceItem: options
+      // slectedTabs: "finance",
+      // sourceItem: options
     };
   },
   components: {
     "ez-button": Button,
-    "ez-button-group": ButtonGroup,
-    "ez-input": Input,
-    "ez-tabs": Tabs,
-    "ez-tabs-head": TabsHead,
-    "ez-tabs-body": TabsBody,
-    "ez-tabs-item": TabsItem,
-    "ez-tabs-pane": TabsPane,
-    "ez-popover": Popover,
-    "ez-collapse": Collapse,
-    "ez-collapse-item": CollapseItem,
-    "ez-cascader": Cascader,
-    "ez-cascader-items": CascaderItems
+    // "ez-button-group": ButtonGroup,
+    // "ez-input": Input,
+    // "ez-tabs": Tabs,
+    // "ez-tabs-head": TabsHead,
+    // "ez-tabs-body": TabsBody,
+    // "ez-tabs-item": TabsItem,
+    // "ez-tabs-pane": TabsPane,
+    // "ez-popover": Popover,
+    // "ez-collapse": Collapse,
+    // "ez-collapse-item": CollapseItem,
+    // "ez-cascader": Cascader,
+    // "ez-cascader-items": CascaderItems
   },
   methods: {
-    inputChange(e) {
-      console.log(e);
-    },
-    showToast() {
-      this.$toast("点击成功", {
-        closeButton: {
-          text: "关闭",
-          closeCallback(toast) {
-            console.log(toast);
-          }
-        },
-        enableHtml: false,
-        position: "top"
-      });
-    }
+  //   inputChange(e) {
+  //     console.log(e);
+  //   },
+  //   showToast() {
+  //     this.$toast("点击成功", {
+  //       closeButton: {
+  //         text: "关闭",
+  //         closeCallback(toast) {
+  //           console.log(toast);
+  //         }
+  //       },
+  //       enableHtml: false,
+  //       position: "top"
+  //     });
+  //   }
   }
 };
 </script>
