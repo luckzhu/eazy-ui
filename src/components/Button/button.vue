@@ -1,11 +1,19 @@
 <template>
   <button
     class="ez-button"
-    :class="[`ez-button-${type}`, {'is-round':round != undefined} , {[iconPosition]:true}]"
-    @click="btnClick"
+    :class="[
+      `ez-button-${type}`,
+      { 'is-round': round != undefined },
+      { [iconPosition]: true }
+    ]"
+    @click="$emit('click')"
   >
-    <zhu-icon v-if="icon && isLoading===true" name="loading" class="icon-loading"></zhu-icon>
-    <zhu-icon v-if="icon && !isLoading" :name="icon"></zhu-icon>
+    <ez-icon
+      v-if="icon && loading === true"
+      name="loading"
+      class="icon-loading"
+    ></ez-icon>
+    <ez-icon v-if="icon && !loading" :name="icon"></ez-icon>
     <span class="button-content">
       <slot></slot>
     </span>
@@ -16,12 +24,10 @@
 import Icon from "@/components/Icon/icon.vue";
 export default {
   data() {
-    return {
-      isLoading: false
-    };
+    return {};
   },
   components: {
-    "zhu-icon": Icon
+    "ez-icon": Icon
   },
   props: {
     type: {
@@ -72,7 +78,7 @@ export default {
   align-items: center;
 
   &.left {
-    > .zhu-icon {
+    > .ez-icon {
       order: 1;
       margin-left: 0;
       margin-right: 0.4em;
@@ -83,7 +89,7 @@ export default {
   }
 
   &.right {
-    > .zhu-icon {
+    > .ez-icon {
       order: 2;
       margin-left: 0.4em;
       margin-right: 0;

@@ -1,11 +1,11 @@
 <template>
-  <svg class="zhu-icon">
-    <use :xlink:href="`#icon-${name}`" />
+  <svg class="ez-icon" @click="$emit('btnClick', $event)">
+    <use :xlink:href="`#i-${name}`"></use>
   </svg>
 </template>
 
 <script>
-import './iconfont.js'
+import "@/components/Icon/iconfont.js";
 export default {
   props: {
     name: {}
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style>
-.zhu-icon {
+.ez-icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
