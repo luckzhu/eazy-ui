@@ -9,7 +9,7 @@
     @click="$emit('click')"
   >
     <ez-icon
-      v-if="icon && loading === true"
+      v-if="loading"
       name="loading"
       class="icon-loading"
     ></ez-icon>
@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import Icon from "@/components/Icon/icon.vue";
+import Icon from "../Icon/icon.vue";
+
 export default {
   data() {
     return {};
@@ -50,7 +51,7 @@ export default {
   methods: {
     btnClick() {
       if (!this.loading) return;
-      this.isLoading = !this.isLoading;
+      this.loading = !this.loading;
     }
   }
 };

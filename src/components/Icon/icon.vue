@@ -1,15 +1,14 @@
 <template>
-  <svg class="ez-icon" @click="$emit('btnClick', $event)">
-    <use :xlink:href="`#i-${name}`"></use>
+   <svg class="ez-icon" @click="$emit('click', $event)">
+    <use :xlink:href="`#icon-${name}`"></use>
   </svg>
 </template>
 
 <script>
-import "@/components/Icon/iconfont.js";
+import "./iconfont";
 export default {
-  props: {
-    name: {}
-  }
+   name: 'EzIcon',
+    props: ['name']
 };
 </script>
 
