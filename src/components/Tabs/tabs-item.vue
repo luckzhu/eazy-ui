@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "EazyTabsItem",
+  name: "EzTabsItem",
   data() {
     return {
       active: false
@@ -52,6 +52,8 @@ export default {
   font-weight: 500;
   color: #303133;
   position: relative;
+  cursor: pointer;
+  
   &:first-child {
     padding-left: 0;
   }

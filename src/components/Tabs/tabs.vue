@@ -7,7 +7,7 @@
 <script>
 import Vue from "vue";
 export default {
-  name: "EazyTabs",
+  name: "EzTabs",
   data() {
     return {
       eventBus: new Vue()

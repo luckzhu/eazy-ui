@@ -58,8 +58,8 @@
       <button @click="showToast">点我触发Toast</button>
     </div>
 
-    <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
-    <!-- <div class="testBox">
+    <!-- .sync等价于加上 @update:seleted="slectedTabs = $event"  -->
+    <div class="testBox">
       <ez-tabs :selected.sync="slectedTabs">
         <ez-tabs-head>
           <ez-tabs-item name="beauty">美女新闻</ez-tabs-item>
@@ -73,7 +73,7 @@
           <ez-tabs-pane name="sports">关于体育的新闻</ez-tabs-pane>
         </ez-tabs-body>
       </ez-tabs>
-    </div> -->
+    </div>
 
     <!-- <div class="testBox">
       <ez-popover position="top" trigger="click">
@@ -148,11 +148,11 @@ import Button from "@/components/Button/button.vue";
 import "@/components/Icon/iconfont";
 // import ButtonGroup from "./components/button-group.vue";
 // import Input from "./components/input.vue";
-// import Tabs from "./components/tabs";
-// import TabsHead from "./components/tabs-head";
-// import TabsBody from "./components/tabs-body";
-// import TabsItem from "./components/tabs-item";
-// import TabsPane from "./components/tabs-pane";
+import Tabs from "@/components/Tabs/tabs";
+import TabsHead from "./components/Tabs/tabs-head";
+import TabsBody from "./components/Tabs/tabs-body";
+import TabsItem from "./components/Tabs/tabs-item";
+import TabsPane from "./components/Tabs/tabs-pane";
 // import tabsHeadVue from "./components/tabs-head.vue";
 // import Popover from "./components/popover";
 // import Collapse from "./components/collapse";
@@ -433,19 +433,19 @@ export default {
   name: "app",
   data() {
     return {
-      // slectedTabs: "finance",
+      slectedTabs: "finance",
       // sourceItem: options
     };
   },
   components: {
-    "ez-button": Button
+    "ez-button": Button,
     // "ez-button-group": ButtonGroup,
     // "ez-input": Input,
-    // "ez-tabs": Tabs,
-    // "ez-tabs-head": TabsHead,
-    // "ez-tabs-body": TabsBody,
-    // "ez-tabs-item": TabsItem,
-    // "ez-tabs-pane": TabsPane,
+    "ez-tabs": Tabs,
+    "ez-tabs-head": TabsHead,
+    "ez-tabs-body": TabsBody,
+    "ez-tabs-item": TabsItem,
+    "ez-tabs-pane": TabsPane,
     // "ez-popover": Popover,
     // "ez-collapse": Collapse,
     // "ez-collapse-item": CollapseItem,
