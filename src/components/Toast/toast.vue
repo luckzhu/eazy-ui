@@ -6,22 +6,24 @@
         <div v-else v-html="$slots.default[0]"></div>
       </div>
       <span class="line" ref="line"></span>
-      <span class="close" v-if="closeButton" @click="clickClose">{{closeButton.text}}</span>
+      <span class="close" v-if="closeButton" @click="clickClose">{{
+        closeButton.text
+      }}</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ZhuToast",
+  name: "EzToast",
   props: {
+    //要么设置false,要么就设数字是延时时间
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    closeTime: {
-      type: Number,
-      default: 5
+      type: [Boolean, Number],
+      default: true,
+      validator(value) {
+        return value === false || typeof value === "number";
+      }
     },
     closeButton: {
       type: Object,
@@ -70,7 +72,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.toastClose();
-        }, this.closeTime * 1000);
+        }, this.autoClose * 1000);
       }
     },
     toastClose() {
@@ -136,9 +138,9 @@ $toast-duration: 300ms;
   transform: translateX(-50%);
   &.position-top {
     top: 0;
-     .toast {
-       border-top-left-radius: 0;
-       border-top-right-radius: 0;
+    .toast {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       animation: slide-down $toast-duration;
     }
   }
@@ -146,9 +148,8 @@ $toast-duration: 300ms;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     .toast {
-       animation: fade-in $toast-duration;
+      animation: fade-in $toast-duration;
     }
-   
   }
   &.position-bottom {
     bottom: 0;

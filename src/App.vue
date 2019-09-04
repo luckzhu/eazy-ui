@@ -6,7 +6,7 @@
       </ez-cascader>
     </div> -->
 
-    <div class="testBox">
+    <!-- <div class="testBox">
       <div class="mybutton">
         <ez-button>默认按钮</ez-button>
         <ez-button type="primary">主要按钮</ez-button>
@@ -38,9 +38,9 @@
           iconPosition="right"
           >删除按钮</ez-button
         >
-      </div>
+      </div> -->
 
-      <!-- <div class="mybutton">
+    <!-- <div class="mybutton">
         <ez-button-group>
           <ez-button icon="left">前进</ez-button>
           <ez-button icon="right" iconPosition="right">后退</ez-button>
@@ -53,13 +53,12 @@
         <ez-input value="张三" disabled></ez-input>
         <ez-input value="张" error errorMessage="名字不能是一个字哦"></ez-input>
       </div>
-
-      <div class="mybutton">
-        <button @click="showToast">点我触发Toast</button>
-      </div> -->
+ </div> -->
+    <div class="mybutton">
+      <button @click="showToast">点我触发Toast</button>
     </div>
 
- <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
+    <!--.sync等价于加上 @update:seleted="slectedTabs = $event" -->
     <!-- <div class="testBox">
       <ez-tabs :selected.sync="slectedTabs">
         <ez-tabs-head>
@@ -439,7 +438,7 @@ export default {
     };
   },
   components: {
-    "ez-button": Button,
+    "ez-button": Button
     // "ez-button-group": ButtonGroup,
     // "ez-input": Input,
     // "ez-tabs": Tabs,
@@ -454,21 +453,22 @@ export default {
     // "ez-cascader-items": CascaderItems
   },
   methods: {
-  //   inputChange(e) {
-  //     console.log(e);
-  //   },
-  //   showToast() {
-  //     this.$toast("点击成功", {
-  //       closeButton: {
-  //         text: "关闭",
-  //         closeCallback(toast) {
-  //           console.log(toast);
-  //         }
-  //       },
-  //       enableHtml: false,
-  //       position: "top"
-  //     });
-  //   }
+    //   inputChange(e) {
+    //     console.log(e);
+    //   },
+    showToast() {
+      this.$toast("点击成功", {
+        autoClose: 1,
+        closeButton: {
+          text: "关闭",
+          closeCallback(toast) {
+            console.log(toast);
+          }
+        },
+        enableHtml: false,
+        position: "top"
+      });
+    }
   }
 };
 </script>

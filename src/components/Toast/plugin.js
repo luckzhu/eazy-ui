@@ -6,8 +6,8 @@ function createToast({ Vue, message, propsData, onClose }) {
     let toast = new Constructor({ propsData })
     //slot要写在$mount之前。default是一个数组。
     toast.$slots.default = [message]
-    toast.$on('close', onClose)
     toast.$mount()
+    toast.$on('close', onClose)
     //注意不要忘了body
     document.body.appendChild(toast.$el)
     return toast
