@@ -17,7 +17,8 @@
 </template>
 
 <script>
-import Icon from "@/components/Icon/icon.vue";
+import Icon from "../Icon/icon.vue";
+
 export default {
   components: {
     "ez-icon": Icon

@@ -20,7 +20,7 @@ export default {
     //要么设置false,要么就设数字是延时时间
     autoClose: {
       type: [Boolean, Number],
-      default: true,
+      default: 1,
       validator(value) {
         return value === false || typeof value === "number";
       }

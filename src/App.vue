@@ -6,8 +6,8 @@
       </ez-cascader>
     </div> -->
 
-    <!-- <div class="testBox">
-      <div class="mybutton">
+    <div class="testBox">
+      <!-- <div class="mybutton">
         <ez-button>默认按钮</ez-button>
         <ez-button type="primary">主要按钮</ez-button>
         <ez-button type="success">成功按钮</ez-button>
@@ -19,10 +19,12 @@
         <ez-button type="primary" round>主要按钮</ez-button>
         <ez-button type="success" round>成功按钮</ez-button>
         <ez-button type="danger" round>危险按钮</ez-button>
-      </div>
+      </div> -->
       <div class="mybutton">
         <ez-button round icon="search">默认按钮</ez-button>
-        <ez-button
+        <ez-button round icon="search" loading>默认按钮</ez-button>
+
+        <!-- <ez-button
           type="primary"
           round
           icon="setting"
@@ -37,9 +39,9 @@
           loading
           iconPosition="right"
           >删除按钮</ez-button
-        >
-      </div> -->
-
+        > -->
+      </div>
+    </div>
     <!-- <div class="mybutton">
         <ez-button-group>
           <ez-button icon="left">前进</ez-button>
@@ -432,7 +434,7 @@ export default {
   name: "app",
   data() {
     return {
-      slectedTabs: "finance",
+      slectedTabs: "finance"
       // sourceItem: options
     };
   },
