@@ -24,15 +24,25 @@ export default {
       eventBus: this.eventBus
     };
   },
-  mounted(){
-      this.eventBus.$emit('update:selected',this.selected)
+  mounted() {
+    this.$children.forEach(vm => {
+      if (vm.$options.name === "EzTabsHead") {
+        vm.$children.forEach(childVm => {
+          if (
+            childVm.$options.name === "EzTabsItem" &&
+            childVm.name === this.selected
+          ) {
+            this.eventBus.$emit("update:selected", this.selected, childVm);
+          }
+        });
+      }
+    });
   }
- 
 };
 </script>
 
 <style lang="scss" scoped>
 .tabs {
-    font-size: 16px;
+  font-size: 16px;
 }
 </style>

@@ -37,7 +37,8 @@ export default {
   },
   methods: {
     switchTab() {
-      this.eventBus.$emit("update:selected", this.name);
+      // this.eventBus.$emit("update:selected", this.name);
+      this.eventBus.$emit("update:selected", this.name, this);
     }
   }
 };
@@ -53,7 +54,7 @@ export default {
   color: #303133;
   position: relative;
   cursor: pointer;
-  
+
   &:first-child {
     padding-left: 0;
   }
