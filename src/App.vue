@@ -117,7 +117,7 @@
       </ez-popover>
     </div> -->
 
-    <!-- <div class="testBox">
+    <div class="testBox">
       <ez-collapse :selected="['item1', 'item2']">
         <ez-collapse-item
           title="一致性 Consistency
@@ -139,7 +139,7 @@
           帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</ez-collapse-item
         >
       </ez-collapse>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -149,16 +149,15 @@ import "@/components/Icon/iconfont";
 // import ButtonGroup from "./components/button-group.vue";
 // import Input from "./components/input.vue";
 import Tabs from "@/components/Tabs/tabs";
-import TabsHead from "./components/Tabs/tabs-head";
-import TabsBody from "./components/Tabs/tabs-body";
-import TabsItem from "./components/Tabs/tabs-item";
-import TabsPane from "./components/Tabs/tabs-pane";
-// import tabsHeadVue from "./components/tabs-head.vue";
+import TabsHead from "@/components/Tabs/tabs-head";
+import TabsBody from "@/components/Tabs/tabs-body";
+import TabsItem from "@/components/Tabs/tabs-item";
+import TabsPane from "@/components/Tabs/tabs-pane";
 // import Popover from "./components/popover";
-// import Collapse from "./components/collapse";
-// import CollapseItem from "./components/collapse-item";
-// import Cascader from "./components/cascader";
-// import CascaderItems from "./components/cascader-items";
+import Collapse from "@/components/Collapse/collapse";
+import CollapseItem from "@/components/Collapse/collapse-item";
+import Cascader from "@/components/Cascader/cascader";
+import CascaderItems from "@/components/Cascader/cascader-items";
 
 let options = [
   {
@@ -447,10 +446,10 @@ export default {
     "ez-tabs-item": TabsItem,
     "ez-tabs-pane": TabsPane,
     // "ez-popover": Popover,
-    // "ez-collapse": Collapse,
-    // "ez-collapse-item": CollapseItem,
-    // "ez-cascader": Cascader,
-    // "ez-cascader-items": CascaderItems
+    "ez-collapse": Collapse,
+    "ez-collapse-item": CollapseItem,
+    "ez-cascader": Cascader,
+    "ez-cascader-items": CascaderItems
   },
   methods: {
     //   inputChange(e) {
