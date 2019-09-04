@@ -10,17 +10,17 @@
       @blur="$emit('blur',$event.target.value)"
     />
     <template v-if="error">
-      <zhu-icon name="setting"></zhu-icon>
+      <ez-icon name="setting"></ez-icon>
       <span class="errorMessage">{{errorMessage}}</span>
     </template>
   </div>
 </template>
 
 <script>
-import Icon from "./icon";
+import Icon from "@/components/Icon/icon.vue";
 export default {
   components: {
-    "zhu-icon": Icon
+    "ez-icon": Icon
   },
   props: {
     value: {
