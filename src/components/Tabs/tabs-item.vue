@@ -1,5 +1,10 @@
 <template>
-  <div class="tabs-item" @click="switchTab" :class="tabActiveClass">
+  <div
+    class="tabs-item"
+    @click="switchTab"
+    :class="tabActiveClass"
+    :data-name="name"
+  >
     <slot></slot>
   </div>
 </template>
@@ -20,13 +25,11 @@ export default {
   },
   inject: ["eventBus"],
   created() {
-    this.eventBus.$on("update:selected", name => {
-      if (name === this.name) {
-        this.active = true;
-      } else {
-        this.active = false;
-      }
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", name => {
+        this.active = name === this.name;
+      });
+    }
   },
   computed: {
     tabActiveClass() {
@@ -38,7 +41,8 @@ export default {
   methods: {
     switchTab() {
       // this.eventBus.$emit("update:selected", this.name);
-      this.eventBus.$emit("update:selected", this.name, this);
+      this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
+      this.$emit("click", this);
     }
   }
 };

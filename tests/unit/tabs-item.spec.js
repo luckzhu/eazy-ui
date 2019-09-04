@@ -21,19 +21,4 @@ describe('TabsItem.vue', () => {
     const vm = wrapper.vm
     expect(vm.$el.getAttribute('data-name')).to.eq('xxx')
   })
-
-  it('接受 disabled 属性', () => {
-    const wrapper = mount(TabsItem, {
-      attachToDocument: true,
-      propsData: {
-        disabled: true,
-      }
-    })
-    const vm = wrapper.vm
-    expect(vm.$el.classList.contains('disabled')).to.be.true
-    const callback = sinon.fake();
-    vm.$on('click', callback)
-    vm.$el.click()
-    expect(callback).to.have.not.been.called
-  })
 }) 
