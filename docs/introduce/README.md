@@ -1,6 +1,6 @@
 # Eazy-UI
 
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.org/luckzhu/eazy-ui.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
 Eazy-UI 是一个简单易用的 UI 框架，提供了一些常用组件，适合 PC 端和移动端使用。
 
