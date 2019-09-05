@@ -22,19 +22,21 @@ export default {
     };
   },
   mounted() {
-    if(this.trigger === 'click'){
-      this.$refs.popover.addEventListener('click',this.onClickPop)
-    }else if (this.trigger === 'hover'){
-      this.$refs.popover.addEventListener('mouseenter',this.popShow)
-      this.$refs.popover.addEventListener('mouseleave',this.popClose)
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", this.onClickPop);
+    } else if (this.trigger === "hover") {
+      this.$refs.popover.addEventListener("mouseenter", this.popShow);
+      this.$refs.popover.addEventListener("mouseleave", this.popClose);
     }
   },
-  destroyed(){
-  if(this.trigger === 'click'){
-      this.$refs.popover.removeEventListener('click',this.onClickPop)
-    }else if (this.trigger === 'hover'){
-      this.$refs.popover.removeEventListener('mouseenter',this.popShow)
-      this.$refs.popover.removeEventListener('mouselever',this.popClose)
+  destroyed() {
+    if (this.trigger === "click") {
+      if (!this.$refs.popover) return;
+      this.$refs.popover.removeEventListener("click", this.onClickPop);
+    } else if (this.trigger === "hover") {
+      if (!this.$refs.popover) return;
+      this.$refs.popover.removeEventListener("mouseenter", this.popShow);
+      this.$refs.popover.removeEventListener("mouselever", this.popClose);
     }
   },
   props: {

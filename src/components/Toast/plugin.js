@@ -19,7 +19,7 @@ let currentToast
 export default {
     install(Vue, options) {
         Vue.prototype.$toast = function (message, toastOptions) {
-            if (currentToast) {
+            if (currentToast && typeof currentToast === 'function') {
                 currentToast.close()
             }
             currentToast = createToast({

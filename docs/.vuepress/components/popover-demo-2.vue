@@ -1,35 +1,29 @@
 <template>
   <div style="padding-top: 4px;">
-    <h3> hover 触发</h3>
-    <p>设置 <code>trigger</code> 属性为 <code>hover</code> </p>    
+    <h3>hover 触发</h3>
+    <p>设置 <code>trigger</code> 属性为 <code>hover</code></p>
     <p>
       <strong>预览</strong>
     </p>
     <div class="box">
       <div class="row">
-        <ez-popover trigger="hover">
-          <ez-button>上方弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+        <ez-popover position="top" trigger="hover">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我上</ez-button>
         </ez-popover>
         <ez-popover position="bottom" trigger="hover">
-          <ez-button>下方弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我下</ez-button>
         </ez-popover>
+
         <ez-popover position="left" trigger="hover">
-          <ez-button>左边弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我左</ez-button>
         </ez-popover>
+
         <ez-popover position="right" trigger="hover">
-          <ez-button>右边弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我右</ez-button>
         </ez-popover>
       </div>
     </div>
@@ -55,30 +49,24 @@ export default {
   data() {
     return {
       content: `
-          <ez-popover trigger="hover">
-            <ez-button>上方弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="bottom" trigger="hover">
-            <ez-button>下方弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="left" trigger="hover">
-            <ez-button>左边弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="right" trigger="hover">
-            <ez-button>右边弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
+       <ez-popover position="top" trigger="hover">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我上</ez-button>
+        </ez-popover>
+        <ez-popover position="bottom" trigger="hover">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我下</ez-button>
+        </ez-popover>
+
+        <ez-popover position="left" trigger="hover">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我左</ez-button>
+        </ez-popover>
+
+        <ez-popover position="right" trigger="hover">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我右</ez-button>
+        </ez-popover>
       `
         .replace(/^ {8}/gm, "")
         .trim()

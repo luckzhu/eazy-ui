@@ -6,29 +6,23 @@
     </p>
     <div class="box">
       <div class="row">
-        <ez-popover>
-          <ez-button>上方弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+        <ez-popover trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我上</ez-button>
         </ez-popover>
-        <ez-popover position="bottom">
-          <ez-button>下方弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+        <ez-popover position="bottom" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我下</ez-button>
         </ez-popover>
-        <ez-popover position="left">
-          <ez-button>左边弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+
+        <ez-popover position="left" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我左</ez-button>
         </ez-popover>
-        <ez-popover position="right">
-          <ez-button>右边弹出</ez-button>
-          <template slot="content">
-            弹出内容
-          </template>
+
+        <ez-popover position="right" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我右</ez-button>
         </ez-popover>
       </div>
     </div>
@@ -54,30 +48,24 @@ export default {
   data() {
     return {
       content: `
-          <ez-popover>
-            <ez-button>上方弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="bottom">
-            <ez-button>下方弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="left">
-            <ez-button>左边弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
-          <ez-popover position="right">
-            <ez-button>右边弹出</ez-button>
-            <template slot="content">
-              弹出内容
-            </template>
-          </ez-popover>
+           <ez-popover trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我上</ez-button>
+        </ez-popover>
+        <ez-popover position="bottom" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我下</ez-button>
+        </ez-popover>
+
+        <ez-popover position="left" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我左</ez-button>
+        </ez-popover>
+
+        <ez-popover position="right" trigger="click">
+          <div slot="content">我是popover内容</div>
+          <ez-button>点我右</ez-button>
+        </ez-popover>
       `
         .replace(/^ {8}/gm, "")
         .trim()
