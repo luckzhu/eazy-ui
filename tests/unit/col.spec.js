@@ -3,8 +3,8 @@ import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 import {shallowMount, mount} from '@vue/test-utils'
 import Vue from 'vue'
-import Row from '@/components/Grid/row'
-import Col from '@/components/Grid/col'
+import Row from '../../src/components/Grid/row.vue'
+import Col from '../../src/components/Grid/col.vue'
 
 chai.use(sinonChai)
 
