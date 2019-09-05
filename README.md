@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/luckzhu/eazy-ui.svg?branch=master)](https://travis-ci.org/luckzhu/eazy-ui)
 ![npm](https://img.shields.io/npm/v/eazy-ui)
+https://img.shields.io/github/license/luckzhu/eazy-ui
 
 Eazy-UI 是一个简单易用的 UI 框架，提供了一些常用组件，适合 PC 端和移动端使用。
 
