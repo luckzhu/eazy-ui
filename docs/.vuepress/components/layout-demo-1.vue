@@ -1,21 +1,21 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h2>布局</h2>
+  <div style="padding-top: 4px;">
+    <h3>基本用法</h3>
     <p>
       <strong>预览</strong>
     </p>
 
-    <g-layout style="color: white; margin-bottom:50px;">
-      <g-header style="height: 50px; background:lightskyblue;">
+    <ez-layout style="color: white; margin-bottom:50px;">
+      <ez-header style="height: 50px; background:#41b883;">
         header
-      </g-header>
-      <g-content style="height: 100px; background:deepskyblue;">
+      </ez-header>
+      <ez-content style="height: 100px; background:#365161;">
         content
-      </g-content>
-      <g-footer style="height: 50px; background:lightskyblue;">
+      </ez-content>
+      <ez-footer style="height: 50px; background:#41b883;">
         footer
-      </g-footer>
-    </g-layout>
+      </ez-footer>
+    </ez-layout>
 
     <p>
       <strong>代码</strong>
@@ -24,36 +24,44 @@
   </div>
 </template>
 <style scoped>
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 </style>
 <script>
-  import GLayout from '../../../src/components/Layout/layout'
-  import GHeader from '../../../src/components/Layout/header'
-  import GFooter from '../../../src/components/Layout/footer'
-  import GContent from '../../../src/components/Layout/content'
-  import GSider from '../../../src/components/Layout/sider'
+import Layout from "../../../src/components/Layout/layout";
+import Header from "../../../src/components/Layout/header";
+import Footer from "../../../src/components/Layout/footer";
+import Content from "../../../src/components/Layout/content";
+import Sider from "../../../src/components/Layout/sider";
 
-  export default {
-    components: {GLayout, GHeader, GFooter, GContent, GSider},
-    data () {
-      return {
-        content: `
-          <g-layout style="color: white; margin-bottom:50px;">
-            <g-header style="height: 50px; background:lightskyblue;">
+export default {
+  components: {
+    "ez-layout": Layout,
+    "ez-header": Header,
+    "ez-footer": Footer,
+    "ez-content": Content,
+    'ez-sider':Sider
+  },
+  data() {
+    return {
+      content: `
+          <ez-layout style="color: white; margin-bottom:50px;">
+            <ez-header style="height: 50px; background:#41b883;">
               header
-            </g-header>
-            <g-content style="height: 100px; background:deepskyblue;">
+            </ez-header>
+            <ez-content style="height: 100px; background:#365161;">
               content
-            </g-content>
-            <g-footer style="height: 50px; background:lightskyblue;">
+            </ez-content>
+            <ez-footer style="height: 50px; background:#41b883;">
               footer
-            </g-footer>
-          </g-layout>
+            </ez-footer>
+          </ez-layout>
 
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
+      `
+        .replace(/^ {8}/gm, "")
+        .trim()
+    };
   }
+};
 </script>

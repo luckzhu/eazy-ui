@@ -1,12 +1,15 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h2>简单用法</h2>
+  <div style="padding-top: 4px;">
+    <h3>简单用法</h3>
     <p>
       <strong>预览</strong>
     </p>
-    <g-input value="中文"></g-input>
-    <g-input value="中文" disabled></g-input>
-    <g-input value="中文" readonly></g-input>
+    <div class="box">
+      <div class="row">
+        <ez-input value="张三"></ez-input>
+        <ez-input value="张三" disabled></ez-input>
+      </div>
+    </div>
 
     <p>
       <strong>代码</strong>
@@ -15,20 +18,36 @@
   </div>
 </template>
 <script>
-  import GInput from '../../../src/components/Input/input'
+import Input from "../../../src/components/Input/input";
 
-  export default {
-    components: {GInput},
-    data () {
-      return {
-        selected: '1',
-        content: `
-          <g-input></g-input>
-          <g-input value="中文"></g-input>
-          <g-input value="中文" disabled></g-input>
-          <g-input value="中文" readonly></g-input>
-      `.replace(/^ {8}/gm, '').trim()
-      }
+export default {
+  components: { "ez-input": Input },
+  data() {
+    return {
+      content: `
+<ez-input></ez-input>
+<ez-input value="张三"></ez-input>
+<ez-input value="张三" disabled></ez-input>
+      `
+        .replace(/^ {8}/gm, "")
+        .trim()
+    };
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.box {
+  .row {
+    display: flex;
+    margin: 20px 5px;
+    > * {
+      margin-right: 12px;
     }
   }
-</script>
+  display: block;
+  padding: 0 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+}
+</style>

@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-item {
-  padding: 0 20px;
+  padding: 0 16px;
   height: 40px;
   box-sizing: border-box;
   line-height: 40px;
@@ -58,13 +58,10 @@ export default {
   color: #303133;
   position: relative;
   cursor: pointer;
-
-  &:first-child {
-    padding-left: 0;
-  }
 }
 
 .tabActive {
   color: #409eff;
+  font-weight: bold;
 }
 </style>

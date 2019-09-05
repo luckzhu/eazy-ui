@@ -50,5 +50,6 @@ export default {
 <style lang="scss" scoped>
 .tabs {
   font-size: 16px;
+  width: 100%;
 }
 </style>

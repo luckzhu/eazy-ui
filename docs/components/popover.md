@@ -2,7 +2,7 @@
 title: Popover
 ---
 
-# 弹出层
+# Popover 气泡卡片
 
 <ClientOnly>
   <popover-demo-1>

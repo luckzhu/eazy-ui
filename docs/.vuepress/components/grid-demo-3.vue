@@ -1,62 +1,63 @@
 <template>
   <div style="padding-top: 16px;">
-    <h2>设置空隙</h2>
+    <h3>设置空隙</h3>
+    <p>设置 <code>offset</code> 属性 </p>
     <p>
       <strong>预览</strong>
     </p>
-    <g-row class="demoRow" gutter="10">
-      <g-col span="8">
+    <ez-row class="demoRow" gutter="10">
+      <ez-col span="8">
         <div class="demoCol">8</div>
-      </g-col>
-      <g-col span="8" offset="8">
+      </ez-col>
+      <ez-col span="8" offset="8">
         <div class="demoCol">8</div>
-      </g-col>
-    </g-row>
-    <g-row class="demoRow" gutter="10">
-      <g-col span="6" offset="6">
+      </ez-col>
+    </ez-row>
+    <ez-row class="demoRow" gutter="10">
+      <ez-col span="6" offset="6">
         <div class="demoCol">6</div>
-      </g-col>
-      <g-col span="6" offset="6">
+      </ez-col>
+      <ez-col span="6" offset="6">
         <div class="demoCol">6</div>
-      </g-col>
-    </g-row>
-    <g-row class="demoRow" gutter="10">
-      <g-col span="4">
+      </ez-col>
+    </ez-row>
+    <ez-row class="demoRow" gutter="10">
+      <ez-col span="4">
         <div class="demoCol">4</div>
-      </g-col>
-      <g-col span="4" offset="4">
+      </ez-col>
+      <ez-col span="4" offset="4">
         <div class="demoCol">4</div>
-      </g-col>
-      <g-col span="4" offset="8">
+      </ez-col>
+      <ez-col span="4" offset="8">
         <div class="demoCol">4</div>
-      </g-col>
-    </g-row>
-    <g-row class="demoRow" gutter="10">
-      <g-col span="2">
+      </ez-col>
+    </ez-row>
+    <ez-row class="demoRow" gutter="10">
+      <ez-col span="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2" offset="2">
+      </ez-col>
+      <ez-col span="2" offset="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2">
+      </ez-col>
+      <ez-col span="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2" offset="2">
+      </ez-col>
+      <ez-col span="2" offset="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2">
+      </ez-col>
+      <ez-col span="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2" offset="2">
+      </ez-col>
+      <ez-col span="2" offset="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2">
+      </ez-col>
+      <ez-col span="2">
         <div class="demoCol">2</div>
-      </g-col>
-      <g-col span="2" offset="2">
+      </ez-col>
+      <ez-col span="2" offset="2">
         <div class="demoCol">2</div>
-      </g-col>
-    </g-row>
+      </ez-col>
+    </ez-row>
 
     <p>
       <strong>代码</strong>
@@ -64,6 +65,79 @@
     <pre><code>{{content}}</code></pre>
   </div>
 </template>
+
+<script>
+import Row from '../../../src/components/Grid/row'
+  import Col from '../../../src/components/Grid/col'
+
+  export default {
+    components: {'ez-row':Row, 'ez-col':Col},    
+    data () {
+      return {
+        content: `
+          * {
+            box-sizing: border-box;
+          }
+
+          <ez-row class="demoRow" gutter="10">
+            <ez-col span="8">
+              <div class="demoCol">8</div>
+            </ez-col>
+            <ez-col span="8" offset="8">
+              <div class="demoCol">8</div>
+            </ez-col>
+          </ez-row>
+          <ez-row class="demoRow" gutter="10">
+            <ez-col span="6" offset="6">
+              <div class="demoCol">6</div>
+            </ez-col>
+            <ez-col span="6" offset="6">
+              <div class="demoCol">6</div>
+            </ez-col>
+          </ez-row>
+          <ez-row class="demoRow" gutter="10">
+            <ez-col span="4">
+              <div class="demoCol">4</div>
+            </ez-col>
+            <ez-col span="4" offset="4">
+              <div class="demoCol">4</div>
+            </ez-col>
+            <ez-col span="4" offset="8">
+              <div class="demoCol">4</div>
+            </ez-col>
+          </ez-row>
+          <ez-row class="demoRow" gutter="10">
+            <ez-col span="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2" offset="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2" offset="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2" offset="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+            <ez-col span="2" offset="2">
+              <div class="demoCol">2</div>
+            </ez-col>
+          </ez-row>
+      `.replace(/^ {8}/gm, '').trim()
+      }
+    }
+  }
+</script>
+
 <style scoped>
   * {
     box-sizing: border-box;
@@ -72,82 +146,12 @@
     margin: 10px 0;
   }
   .demoCol {
+    color: #fff;
     height: 50px;
-    border: 1px solid #ccc;
-    background: #eee;
+    border: 1px solid #eee;
+    background: #41b883;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 </style>
-<script>
-import GRow from '../../../src/components/Grid/row'
-  import GCol from '../../../src/components/Grid/col'
-
-  export default {
-    components: {GRow, GCol},
-    data () {
-      return {
-        content: `
-          * {
-            box-sizing: border-box;
-          }
-
-          <g-row class="demoRow" gutter="10">
-            <g-col span="8">
-              <div class="demoCol">8</div>
-            </g-col>
-            <g-col span="8" offset="8">
-              <div class="demoCol">8</div>
-            </g-col>
-          </g-row>
-          <g-row class="demoRow" gutter="10">
-            <g-col span="6" offset="6">
-              <div class="demoCol">6</div>
-            </g-col>
-            <g-col span="6" offset="6">
-              <div class="demoCol">6</div>
-            </g-col>
-          </g-row>
-          <g-row class="demoRow" gutter="10">
-            <g-col span="4">
-              <div class="demoCol">4</div>
-            </g-col>
-            <g-col span="4" offset="4">
-              <div class="demoCol">4</div>
-            </g-col>
-            <g-col span="4" offset="8">
-              <div class="demoCol">4</div>
-            </g-col>
-          </g-row>
-          <g-row class="demoRow" gutter="10">
-            <g-col span="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2" offset="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2" offset="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2" offset="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2">
-              <div class="demoCol">2</div>
-            </g-col>
-            <g-col span="2" offset="2">
-              <div class="demoCol">2</div>
-            </g-col>
-          </g-row>
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
-  }
-</script>

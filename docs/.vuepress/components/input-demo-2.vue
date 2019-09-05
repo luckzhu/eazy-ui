@@ -1,12 +1,14 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h2>双向绑定</h2>
+  <div style="padding-top: 4px;">
+    <h3>双向绑定</h3>
     <p>
       <strong>预览</strong>
     </p>
-    <g-input v-model="value"></g-input>
-    <div>
-      value: {{value}}
+    <div class="box">
+      <div class="row">
+        <ez-input v-model="value"></ez-input>
+        <div><strong>Value:  </strong> {{ value }}</div>
+      </div>
     </div>
 
     <p>
@@ -16,24 +18,44 @@
   </div>
 </template>
 <script>
-  import GInput from '../../../src/components/Input/input'
+import Input from "../../../src/components/Input/input";
 
-  export default {
-    components: {GInput},
-    data () {
-      return {
-        value: '1',
-        content: `
+
+export default {
+  components: { "ez-input": Input },
+  data() {
+    return {
+      value: "我是输入的内容",
+      content: `
           data:{
-            value: '1'
+            value: '我是输入的内容'
           }
 
-          <g-input v-model="value"></g-input>
+          <ez-input v-model="value"></ez-input>
           <div>
             value: {{value}}
           </div>
-      `.replace(/^ {8}/gm, '').trim()
-      }
+      `
+        .replace(/^ {8}/gm, "")
+        .trim()
+    };
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.box {
+  .row {
+    display: flex;
+    margin: 20px 5px;
+    align-items: center;
+    > * {
+      margin-right: 20px;
     }
   }
-</script>
+  display: block;
+  padding: 0 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+}
+</style>

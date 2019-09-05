@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :class="toastPosition">
-    <div class="toast" ref="toast">
+    <div class="ez-toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
@@ -20,7 +20,7 @@ export default {
     //要么设置false,要么就设数字是延时时间
     autoClose: {
       type: [Boolean, Number],
-      default: 1,
+      default: 2,
       validator(value) {
         return value === false || typeof value === "number";
       }
@@ -131,14 +131,14 @@ $toast-duration: 300ms;
     opacity: 1;
   }
 }
-
 .wrapper {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
+   z-index: 30 !important;
   &.position-top {
     top: 0;
-    .toast {
+    .ez-toast {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       animation: slide-down $toast-duration;
@@ -147,13 +147,13 @@ $toast-duration: 300ms;
   &.position-middle {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    .toast {
+    .ez-toast {
       animation: fade-in $toast-duration;
     }
   }
   &.position-bottom {
     bottom: 0;
-    .toast {
+    .ez-toast {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       animation: slide-up $toast-duration;
@@ -161,7 +161,7 @@ $toast-duration: 300ms;
   }
 }
 
-.toast {
+.ez-toast {
   font-size: $font-size;
   min-height: $toast-min-height;
   line-height: 1.8;

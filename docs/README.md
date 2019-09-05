@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /ada.png
+heroImage: /Easy-UI.png
 actionText: get start →
 actionLink: /introduce/
 features:

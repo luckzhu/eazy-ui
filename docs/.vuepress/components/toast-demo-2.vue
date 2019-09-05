@@ -1,12 +1,15 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h2>设置关闭按钮</h2>
+  <div style="padding-top: 4px;">
+    <h3>设置关闭按钮文字</h3>
+    <p>设置 <code>closeButton</code> 中的 <code>text</code> </p>
     <p>
       <strong>预览</strong>
     </p>
 
-    <div>
-      <g-button @click="onClickButton">上方弹出</g-button>
+    <div class="box">
+      <div class="row">
+        <ez-button @click="showToast1">上方弹出</ez-button>
+      </div>
     </div>
 
     <p>
@@ -15,65 +18,70 @@
     <pre><code>{{content}}</code></pre>
   </div>
 </template>
-<style>
-  .gulu-toast {
-    z-index: 30 !important;
-  }
-</style>
-<style scoped>
-  * {
-    box-sizing: border-box;
-  }
 
-</style>
+
 <script>
-    import plugin from '../../../src/components/Toast/plugin'
-  import GButton from '../../../src/components/Button/button'
-  import Vue from 'vue'
+import plugin from "../../../src/components/Toast/plugin";
+import Button from "../../../src/components/Button/button";
+import Vue from "vue";
 
-  Vue.use(plugin)
+Vue.use(plugin);
 
-  export default {
-    components: {GButton},
-    data () {
-      return {
-        content: `
-          <style>
-            .gulu-toast {
-              z-index: 30;
-            }
-          </style>
+export default {
+  components: {
+    "ez-button": Button
+  },
+  data() {
+    return {
+      content: `
+<ez-button @click="showToast1">上方弹出</ez-button>
 
-          <div>
-            <g-button @click="onClickButton">上方弹出</g-button>
-          </div>
-
-          methods: {
-            onClickButton () {
-              this.$toast('你知道我在等你吗？', {
-                closeButton: {
-                  text: '知道了',
-                  callback: () => {
-                    console.log('他说知道了')
-                  }
-                }
-              })
-            }
-          },
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    },
-    methods: {
-      onClickButton () {
-        this.$toast('你知道我在等你吗？', {
-          closeButton: {
-            text: '知道了',
-            callback: () => {
-              console.log('他说知道了')
-            }
+methods: {
+  showToast1() {
+    this.$toast("点击弹出文字提示", {
+      closeButton: {
+          text: "我知道了",
+          closeCallback(toast) {
           }
-        })
-      }
+     });
+  },
+  }
+}
+      `
+        .replace(/^ {8}/gm, "")
+        .trim()
+    };
+  },
+  methods: {
+    showToast1() {
+      this.$toast("点击弹出文字提示", {
+        closeButton: {
+          text: "我知道了",
+          closeCallback(toast) {
+          }
+        },
+      });
     },
   }
+};
 </script>
+
+<style lang="scss" scoped>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  .row {
+    display: flex;
+    margin: 20px 5px;
+    > * {
+      margin-right: 12px;
+    }
+  }
+  display: block;
+  padding: 0 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+}
+</style>

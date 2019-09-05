@@ -9,8 +9,8 @@ module.exports = {
   themeConfig: {
     nav: [
       {text: '主页', link: '/'},
-      {text: '文档', link: '/guide/'},
-      {text: '交流', link: 'https://google.com'},
+      {text: '源码', link: 'https://github.com/luckzhu/eazy-ui'},
+      {text: 'Github', link: 'https://github.com/luckzhu/'},
     ],
     sidebar: [
       {
@@ -27,11 +27,11 @@ module.exports = {
         children: [
           '/components/button',
           '/components/tabs',
+          '/components/popover',
+          '/components/toast',
           '/components/input',
           '/components/grid',
           '/components/layout',
-          '/components/toast',
-          '/components/popover',
         ]
       },
 
