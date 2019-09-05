@@ -3,6 +3,9 @@ module.exports = {
   base: '/eazy-ui/',
   title: 'Eazy-UI',
   description: '一个好用的UI框架',
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     nav: [
       {text: '主页', link: '/'},

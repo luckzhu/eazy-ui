@@ -1,26 +1,26 @@
 ---
 title: 快速上手
 ---
-
 # 快速上手
-
-本章节待完善
-
 ## 安装
+参考 [安装](/install/) 章节
+## 添加 CSS 样式 
+使用本框架前，请在 CSS 中开启 border-box
+``` CSS
+*，*::before,*::after{ box-sizing: border-box }
+```
+IE 8 及以上浏览器支持此样式。
 
-请参考 [安装](../install/) 章节
+## 引入 Eazy-UI
 
+``` js
+import { Button } from 'eazy-ui'
+import 'eazy-ui/dist/index.css'
 
-## Hello World
-
-```javascript
-import {Button} from 'gulu'
-import Vue from 'vue'
-
-new Vue({
-  el: '#app',
-  components: {
-    'g-button':Button
-  }
-})
+export default {
+    name: 'app',
+    components: {
+        'ez-button': Button
+    }
+}
 ```
